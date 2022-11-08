@@ -28,3 +28,18 @@ static (string[] array, int count) SortArrayMaxCountSymbols(string[] array, int 
     }
     return (sortedArray, count);
 }
+
+// создает финальный массив без пустых элементов
+string[] CreateFinalArray(string[] array, int index)
+{
+    int count = 0;
+    string[] finalArray = new string[index];
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] != null) {
+            finalArray[count] = array[i];
+            count++;
+        }
+    }
+    return finalArray;
+}
