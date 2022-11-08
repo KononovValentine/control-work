@@ -50,15 +50,15 @@ void PrintArray(string[] array)
     Console.Write("[");
     for (int i = 0; i < array.Length - 1; i++)
     {
-        Console.Write(array[i] + ", ");
+        Console.Write('"' + array[i] + '"' + ", ");
     }
-    Console.Write(array[array.Length - 1] + "]");
+    Console.Write('"' + array[array.Length - 1] + '"' + "]");
 }
 
-string insertStringText = "Введите массив строк через пробел = ";
+string insertStringText = "Введите массив строк через запятую без пробелов = ";
 string insertNumberText = "Введите количество символов в подстроке = ";
 
-string[] stringArray = ReadDataString(insertStringText).Split(' ');
+string[] stringArray = ReadDataString(insertStringText).Split(',');
 int substringNumber = ReadDataNumber(insertNumberText);
 var tuple = SortArrayMaxCountSymbols(stringArray, substringNumber).ToTuple();
 string[] finalArray = CreateFinalArray(tuple.Item1, tuple.Item2);
