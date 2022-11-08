@@ -1,2 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Запрашивает ввод строки
+string ReadDataString(string msg)
+{
+    System.Console.Write(msg);
+    string array = System.Console.ReadLine();
+    return array;
+}
