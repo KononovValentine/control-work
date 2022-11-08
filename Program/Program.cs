@@ -54,3 +54,12 @@ void PrintArray(string[] array)
     }
     Console.Write(array[array.Length - 1] + "]");
 }
+
+string insertStringText = "Введите массив строк через пробел = ";
+string insertNumberText = "Введите количество символов в подстроке = ";
+
+string[] stringArray = ReadDataString(insertStringText).Split(' ');
+int substringNumber = ReadDataNumber(insertNumberText);
+var tuple = SortArrayMaxCountSymbols(stringArray, substringNumber).ToTuple();
+string[] finalArray = CreateFinalArray(tuple.Item1, tuple.Item2);
+PrintArray(finalArray);
